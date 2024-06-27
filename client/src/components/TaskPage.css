@@ -1,0 +1,36 @@
+.task-page-container {
+  max-height: 200vh;
+    height:200vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.842);
+    
+  }
+  .task-page-container.light {
+    background-color: white; /* Light background */
+  }
+  .task-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;   
+ 
+  }
+.task-page-title{
+  text-align: center;
+  height: 5vh;
+  font-size: 4vh;
+  color:rgb(128, 2, 128)
+  }
+  .theme-toggle-button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+  }

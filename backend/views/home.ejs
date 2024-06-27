@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <style>
+        * {
+    margin: 0px;
+    padding: 0px;
+    font-size: 25px;
+    font-family: sans-serif;
+    
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    block-size: 50vh;
+    
+}
+  
+.title-home {
+    font-size: 2rem;
+    margin-block-end: 20px;
+}
+  
+.info-text {
+    text-align: center;
+    margin-block-end: 30px;
+}
+  
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: hwb(0 0% 100%);
+    background-color: #280Be7;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-block-end: 10px;
+    animation: pulse 5s infinite alternate;
+}
+.button:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: hsl(133, 85%, 46%);
+}
+  
+.login-link {
+    margin-block-start: 10px;
+    font-size: 0.9rem;
+    color: #000000;
+}
+  
+.login-link a {
+    color: #141414;
+}
+  
+.login-link a:hover {
+    color: #443E6C;
+    text-decoration: none;
+}
+  
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+    </style>
+    <div class="home-container" style="background-image: url('<%= imagePath %>')">
+        <div class="title-home">Welcome to Radio</div>
+
+        <div class="info-text">
+            <p>Get started by creating a new account. It's quick and easy!</p>
+            <p>If you already have an account, simply log in to get started.</p>
+        </div>
+
+        <div class="button-container">
+            <a href="/register" class="button pulse">Create a new account</a>
+            <span class="login-link">Already have an account? <a href="/login" class="login-home-link">Login</a></span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    .containers {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      font-family: sans-serif;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .signup-cards {
+      width: 40vw;
+      height: 65vh;
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      background-color: #19222dbf;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.125);
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      font-family: sans-serif;
+    }
+    .signup-title {
+      font-size: 28px;
+      background: -webkit-linear-gradient(#c6cacd, hsl(256, 57%, 55%));
+      -webkit-background-clip: text;
+      background-clip: text; 
+      -webkit-text-fill-color: transparent;
+    }
+    .signup-subtitle {
+      background: -webkit-linear-gradient(#c6cacd, hsl(256, 57%, 55%));
+      -webkit-background-clip: text;
+      background-clip: text; 
+      -webkit-text-fill-color: transparent;
+    }
+    form {
+      height: 40vh;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      row-gap: 2vh;
+    }
+    input {
+      color: white;
+      font-size: 20px;
+      padding: 2px;
+      width: 15vw;
+      height: 5vh;
+      border-radius: 12px;
+      background-color: transparent;
+      border: none;
+      text-transform: capitalize;
+    }
+    input:hover {
+      border-bottom: 1px black solid;
+    }
+    input:focus {
+      font-size: 24px;
+      outline: none;
+      width: 17vw;
+      height: 4vh;
+    }
+    input::placeholder {
+      font-size: 17px;
+      color: white;
+      text-transform: capitalize;
+    }
+    .signup-btn {
+      width: 12vw;
+      color: white;
+      background-color: transparent;
+      border: none;
+      border-radius: 22px;
+      padding: 2px;
+    }
+    .signup-btn:hover {
+      color: white;
+      border: 3px white solid;
+    }
+    .login {
+      color: white;
+      font-size: 2vh;
+    }
+    .login-link {
+      color: white;
+      font-size: 2vh;
+    }
+    .login-link:hover {
+      color: #167CAC;
+      text-decoration: none;
+    }
+    .error-message {
+      color: red;
+      font-size: 2vh;
+      margin-top: 1vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="containers"> 
+    <div class="signup-cards">
+      <div class="signup-title">Sign Up</div>
+      <div class="signup-subtitle">Create an account</div>
+      <form action="/api/users/register" method="POST">
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          value="<%= typeof name !== 'undefined' ? name : '' %>"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value="<%= typeof email !== 'undefined' ? email : '' %>"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value="<%= typeof password !== 'undefined' ? password : '' %>"
+        />
+        <button type="submit" class="signup-btn">Sign Up</button> 
+      </form>
+      <p class="login">
+        Already have an account? <a href="/login" class="login-link">Login</a>
+      </p>
+      <p class="error-message" id="error-message"></p>
+    </div>
+  </div>
+  <script>
+    document.querySelector('form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      const errorMessageElement = document.getElementById('error-message');
+      
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+  
+        if (response.ok) {
+        
+          if (response.redirected) {
+           
+            window.location.href = response.url;
+          } else {
+            const result = await response.json();
+            errorMessageElement.style.color = 'green';
+            errorMessageElement.textContent = result.message;
+            setTimeout(() => {
+              window.location.href = '/login';
+            }, 2000);
+          }
+        } else {
+         
+          errorMessageElement.textContent = 'An error occurred during registration.';
+          console.error('Error during registration:', response.statusText);
+        }
+      } catch (err) {
+        errorMessageElement.textContent = 'Failed to register. Please try again later.';
+        console.error('Error during registration:', err);
+      }
+    });
+  </script>
+</body>
+</html>

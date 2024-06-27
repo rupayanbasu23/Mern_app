@@ -1,0 +1,85 @@
+.add-task-container-child {
+  top: 30vh;
+  right: 0px;
+  width: 30vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 3;
+  color: #333;
+}
+
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  width: 25vw;
+  height: 25vw;
+  max-width: 400px;
+  background-color: #f5f5f5; /* Light gray background */
+  border-radius: 12px;
+  box-shadow: 
+      2px 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px;
+  color: black; /* Dark gray text */
+  margin: 20px;
+}
+
+.add-task-form:hover {
+  box-shadow: 
+      4px 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow on hover */
+}
+
+.add-task-form h1 {
+  z-index: 1;
+  top: 3px;
+  left: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #000000; /* Black text */
+}
+
+.add-task-form input {
+  width: 90%;
+  height: auto;
+   /* Black text */
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  line-height: 2;
+  outline: none;
+  background-color: #fff; /* White background */
+  border-radius: 12px;
+  box-shadow: 
+      2px 2px 4px rgba(0, 0, 0, 0.1);
+  color:black;
+      
+}
+
+.add-task-form input:focus {
+  box-shadow: 
+      4px 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow on focus */
+  background-color: #fff; /* White background */
+}
+
+.task-btn {
+  background-color: #f5f5f5; /* Light gray background */
+  border-radius: 12px;
+  box-shadow: 
+      2px 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  color: #333; /* Dark gray text */
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+}
+
+.task-btn:hover {
+  box-shadow: 
+      4px 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow on hover */
+}

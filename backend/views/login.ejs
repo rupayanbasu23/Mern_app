@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap">
+  <title>Login</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+    .plus-jakarta-sans-uniqueclass {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
+    body{
+      background-image: url(https://wallpapercave.com/w/wp1981661);
+
+    }
+
+    div.main {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      font-family: Plus Jakarta Sans, sans-serif, s;
+    }
+
+    .cards {
+      height: 65vh;
+      width: 30vw;
+      left: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      background-color: rgba(25, 34, 45, 0.75);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.125);
+    }
+
+    .title {
+  top: 1vh;
+  position: absolute;
+  font-size: 1.5rem;
+  text-align: center;
+  font-size: 34px;
+  background: -webkit-linear-gradient(#c6cacd, #3e7b8f);
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-text-fill-color: transparent;
+}
+
+
+    .title:hover {
+      cursor: pointer;
+    }
+
+    .subtitle {
+  top: 8vh;
+  position: absolute;
+  text-align: center;
+  font-size: 25px;
+  background: -webkit-linear-gradient(#c6cacd, #3e7b8f);
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-text-fill-color: transparent;
+}
+
+
+    form {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      height: 20vh;
+      width: 20vw;
+    }
+
+    .input {
+      height: 2vh;
+      width: 10vw;
+      border: none;
+      border-bottom: 1px solid black;
+      background-color: transparent;
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px;
+      text-transform: capitalize;
+      text-align: center;
+      color: white;
+    }
+
+    .input:focus {
+      outline: none;
+      border-bottom: 2px white solid;
+      border-radius: 0px;
+      height: 3vh;
+      width: 15vw;
+      font-size: 25px;
+    }
+
+    .input::placeholder {
+      text-transform: capitalize;
+      text-align: start;
+      font-size: 20px;
+      color: rgb(255, 253, 253);
+    }
+
+    .btn {
+      text-align: center;
+      font-size: 23px;
+      color: rgb(255, 255, 255);
+      border-radius: 10px;
+      border: none;
+      position: absolute;
+      left: 12vw;
+      bottom: 17vh;
+      height: 4.5vh;
+      width: 6vw;
+      background-color: #3b7a8b;
+      text-transform: capitalize;
+    }
+
+    .btn:hover {
+      cursor: pointer;
+      color: black;
+    }
+
+    .forgot {
+      position: absolute;
+      bottom: 11vh;
+      right: 1vh;
+      width: 10vw;
+      font-size: 2vh;
+      text-align: center;
+    }
+
+    p.new {
+      position: absolute;
+      bottom: 0;
+      width: 20vw;
+      font-size: 2vh;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 2vh;
+    }
+
+    a:hover {
+      color: rgb(97, 187, 236);
+      text-decoration: underline;
+    }
+
+    .home {
+      position: absolute;
+      top: -10vh;
+      left: -30vw;
+      text-transform: capitalize;
+    }
+
+    .home-link:hover {
+      color: black;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body >
+  <div class="main">
+    <div class="cards">
+      <div class="title">Login</div>
+      <div class="subtitle">Welcome back!</div>
+      <form action="/api/users/login" method="POST"> <!-- Adjust action attribute as needed -->
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          class="input"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          class="input"
+        />
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p class="forgot">
+        <a href="/forgotpassword">Forgot password?</a>
+      </p>
+      <p class="new">
+        Don't have an account? <a href="/register">register</a>
+      </p>
+    </div>
+    </div>
+</body>
+</html>

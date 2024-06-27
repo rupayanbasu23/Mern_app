@@ -1,0 +1,102 @@
+.add-task-container-child {
+    top: 30vh;
+    right: 0px;
+    width: 30vw;
+    height: 60vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    order: 3;
+  }
+  .add-task-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 0px;
+    border-radius: 10px;
+    width: 25vw;
+    height: 25vw;
+    max-width: 400px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 
+          inset 4px 4px 6px #0e0e0e,
+          inset -4px -4px 6px #2a2a2a,
+          6px 6px 12px #0e0e0e,
+          -6px -6px 12px #2a2a2a;
+    padding: 20px;
+    color: #ffffff;
+    margin: 20px;
+  
+  }
+  .add-task-form:hover{
+    box-shadow: 
+    inset 4px 4px 6px #0e0e0e,
+    inset -4px -4px 6px #2a2a2a,
+    8px 8px 16px #0e0e0e,
+    -8px -8px 16px #2a2a2a;
+  }
+  
+  .add-task-form h1 {
+    top:3px;
+    left:10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .add-task-form input {
+    width: 90%;
+    height: auto;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    width: 90%;
+    box-sizing: border-box;  
+    line-height: 2;
+    outline: none;
+    background-color: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 
+          inset 4px 4px 6px #0e0e0e,
+          inset -4px -4px 6px #2a2a2a,
+          6px 6px 12px #0e0e0e,
+          -6px -6px 12px #2a2a2a;
+  }
+  
+  .add-task-form input:focus {
+    box-shadow: 
+    inset 4px 4px 6px #0e0e0e,
+    inset -4px -4px 6px #2a2a2a,
+    8px 8px 16px #0e0e0e,
+    -8px -8px 16px #2a2a2a;
+  background-color: #2a2a2a;
+  }
+  
+  .task-btn{
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 
+          inset 4px 4px 6px #0e0e0e,
+          inset -4px -4px 6px #2a2a2a,
+          6px 6px 12px #0e0e0e,
+          -6px -6px 12px #2a2a2a;
+      color: #ffffff;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 16px;  
+  }
+  
+  
+  
+  .task-btn:hover {
+    box-shadow: 
+    inset 4px 4px 6px #0e0e0e,
+    inset -4px -4px 6px #2a2a2a,
+    8px 8px 16px #0e0e0e,
+    -8px -8px 16px #2a2a2a;
+  }
+  
